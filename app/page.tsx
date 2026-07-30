@@ -28,6 +28,15 @@ const products = [
   },
   {
     number: "04",
+    name: "SalonSync",
+    eyebrow: "The whole salon, in rhythm",
+    description:
+      "A connected operations platform for modern salons, bringing appointments, customers, stylists, services, inventory, checkout, and payments into one calm workflow across web and iOS.",
+    tags: ["Operations platform", "Ruby on Rails", "Native iOS"],
+    visual: "salon",
+  },
+  {
+    number: "05",
     name: "FreeBee",
     eyebrow: "Computing history, kept alive",
     description:
@@ -80,6 +89,29 @@ function ProductVisual({ type }: { type: string }) {
     );
   }
 
+  if (type === "salon") {
+    return (
+      <div className="product-visual salon-visual" aria-hidden="true">
+        <div className="salon-topline"><span>SALONSYNC</span><b>Today · 8 appointments</b></div>
+        <div className="salon-dashboard">
+          <div className="salon-calendar">
+            <small>THURSDAY / JUL 30</small>
+            <div><span>9:00</span><b>Cut + style</b><i>AM</i></div>
+            <div><span>10:30</span><b>Color service</b><i>JR</i></div>
+            <div><span>1:00</span><b>Consultation</b><i>SK</i></div>
+          </div>
+          <div className="salon-summary">
+            <small>DAILY PULSE</small>
+            <strong>$1,240</strong>
+            <span>Projected revenue</span>
+            <div className="salon-meter"><i /></div>
+            <b>75% booked</b>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="product-visual freebee-visual" aria-hidden="true">
       <div className="crt">
@@ -101,6 +133,7 @@ export default function Home() {
         </a>
         <div className="nav-links">
           <a href="#work">Work</a>
+          <a href="#services">Consulting</a>
           <a href="#approach">Approach</a>
           <a href="#contact" className="nav-cta">Start a project <Arrow /></a>
         </div>
@@ -111,7 +144,7 @@ export default function Home() {
         <div className="hero-grid">
           <h1>Technology<br />with <em>soul.</em></h1>
           <div className="hero-aside">
-            <p>We design and build distinctive digital products—from modern web experiences to native software and computing tools.</p>
+            <p>We design and build distinctive digital products—and help ambitious teams make smarter technology decisions.</p>
             <a href="#work" className="text-link">Explore our work <Arrow /></a>
           </div>
           <div className="hero-mark" aria-hidden="true">
@@ -146,6 +179,39 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="services shell" id="services">
+        <div className="services-intro">
+          <span className="label">Consulting services</span>
+          <h2>Expert thinking.<br /><em>Practical momentum.</em></h2>
+          <p>Bring us the hard problem, the half-formed idea, or the system that no longer fits. We meet your team where it is and create a clear path forward.</p>
+        </div>
+        <div className="service-grid">
+          <article>
+            <span>01 / STRATEGY</span>
+            <h3>Product direction</h3>
+            <p>Opportunity framing, product roadmaps, technical discovery, and rapid prototypes that turn uncertainty into an actionable plan.</p>
+          </article>
+          <article>
+            <span>02 / DELIVERY</span>
+            <h3>Software engineering</h3>
+            <p>Focused design and development for web, mobile, and native applications—from a first working release to the next critical capability.</p>
+          </article>
+          <article>
+            <span>03 / MODERNIZATION</span>
+            <h3>Legacy, renewed</h3>
+            <p>Thoughtful upgrades for valuable existing software: architecture, interfaces, platform support, packaging, and maintainability.</p>
+          </article>
+          <article>
+            <span>04 / ADVISORY</span>
+            <h3>Technical counsel</h3>
+            <p>Independent architecture reviews, team guidance, vendor evaluation, and hands-on problem solving for consequential decisions.</p>
+          </article>
+        </div>
+        <a className="services-cta" href="mailto:hello@blacklotus.inc?subject=Consulting%20inquiry">
+          <span>Tell us what you’re working through</span><Arrow />
+        </a>
+      </section>
+
       <section className="approach" id="approach">
         <div className="shell">
           <div className="section-heading light">
@@ -165,7 +231,7 @@ export default function Home() {
       </section>
 
       <section className="contact shell" id="contact">
-        <span className="label">Have something in mind?</span>
+        <span className="label">Building something—or solving something?</span>
         <h2>Let’s make it<br /><em>bloom.</em></h2>
         <a className="contact-button" href="mailto:hello@blacklotus.inc">
           <span>Start a conversation</span><Arrow />

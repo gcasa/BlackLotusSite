@@ -8,7 +8,7 @@ const mono = DM_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["30
 
 export const metadata: Metadata = {
   title: "Black Lotus Incorporated — Technology with soul",
-  description: "An independent software studio designing distinctive digital products, native software, and modern computing tools.",
+  description: "An independent software studio and technology consultancy designing distinctive digital products, native software, and modern computing tools.",
   icons: { icon: "/black-lotus-logo.png", shortcut: "/black-lotus-logo.png", apple: "/black-lotus-logo.png" },
   openGraph: {
     title: "Black Lotus Incorporated",
