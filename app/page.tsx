@@ -140,7 +140,7 @@ export default function Home() {
       </nav>
 
       <header className="hero shell" id="top">
-        <div className="hero-kicker"><span>Independent software studio</span><span>Est. 2026 · Pennsylvania</span></div>
+        <div className="hero-kicker"><span>Independent software studio</span><span>Est. 2023 · Maryland</span></div>
         <div className="hero-grid">
           <h1>Technology<br />with <em>soul.</em></h1>
           <div className="hero-aside">
