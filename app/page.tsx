@@ -37,12 +37,12 @@ const products = [
   },
   {
     number: "05",
-    name: "FreeBee",
-    eyebrow: "Computing history, kept alive",
+    name: "ScrubBit",
+    eyebrow: "Delete with confidence",
     description:
-      "A modern macOS experience for the AT&T 3B1 emulator—portable packaging, native menus, display controls, and a frictionless first boot.",
-    tags: ["Emulation", "macOS integration", "Preservation"],
-    visual: "freebee",
+      "A focused macOS privacy utility for overwriting selected files, folders, and removable media—with clear device details and live progress through every pass.",
+    tags: ["Privacy utility", "Native macOS", "Disk management"],
+    visual: "scrubbit",
   },
 ];
 
@@ -113,12 +113,21 @@ function ProductVisual({ type }: { type: string }) {
   }
 
   return (
-    <div className="product-visual freebee-visual" aria-hidden="true">
-      <div className="crt">
-        <div className="crt-head"><span>FREEBEE / UNIX PC</span><i>●</i></div>
-        <pre>AT&amp;T UNIX PC{"\n"}System V Release 3.51{"\n\n"}login: <span className="blink">_</span></pre>
+    <div className="product-visual scrubbit-visual" aria-hidden="true">
+      <div className="scrub-window">
+        <div className="scrub-head"><span><i /> SCRUBBIT</span><b>PRIVACY UTILITY</b></div>
+        <div className="drive-card">
+          <div className="drive-icon">▰</div>
+          <div><small>REMOVABLE MEDIA</small><strong>Archive Drive</strong><span>USB · 128 GB · /Volumes/Archive</span></div>
+          <i>✓</i>
+        </div>
+        <div className="scrub-progress">
+          <div><span>Overwrite progress</span><b>72%</b></div>
+          <div className="scrub-track"><i /></div>
+          <small>PASS 3 OF 4 · PROCESSING SELECTED DATA</small>
+        </div>
       </div>
-      <div className="machine-label">3B1 · 68010 · 1985 / 2026</div>
+      <div className="scrub-status"><span>FILES</span><b>OVERWRITE</b><span>VERIFY</span></div>
     </div>
   );
 }

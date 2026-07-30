@@ -83,11 +83,19 @@ h1 em, h2 em { font-family: var(--font-serif); font-weight: 400; text-transform:
 .note { position: absolute; font: 70px Georgia; color: #6b4bc5; }.n1 { left: 28%; top: 34px; }.n2 { left: 47%; top: 90px; }.n3 { left: 64%; top: 47px; }.n4 { left: 83%; top: 105px; }
 .score-meta { border-top: 1px solid var(--ink); padding-top: 15px; }
 
-.freebee-visual { background: #8f72e7; padding: 35px 50px; }
-.crt { height: 295px; background: #171717; border: 15px solid #d6d0c4; border-bottom-width: 28px; box-shadow: 12px 12px 0 #242127; color: #98ffbc; padding: 20px 24px; }
-.crt-head { display: flex; justify-content: space-between; border-bottom: 1px solid #4b5b50; padding-bottom: 12px; font: 9px var(--font-mono); letter-spacing: .12em; }.crt-head i { color: #98ffbc; font-style: normal; }
-.crt pre { margin-top: 36px; font: 400 14px/1.7 var(--font-mono); text-shadow: 0 0 9px rgba(152,255,188,.5); }
-.machine-label { text-align: right; margin-top: 24px; font: 500 9px var(--font-mono); letter-spacing: .15em; }
+.scrubbit-visual { background: #171719; color: var(--paper); padding: 30px 38px; }
+.scrub-window { min-height: 292px; border: 1px solid #48484d; background: #222226; padding: 22px 24px; box-shadow: 10px 11px 0 #7654d5; }
+.scrub-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 1px solid #46464b; font: 500 9px var(--font-mono); letter-spacing: .13em; }
+.scrub-head span { display: flex; align-items: center; gap: 8px; }.scrub-head span i { width: 8px; height: 8px; display: block; background: #98ffbc; border-radius: 50%; box-shadow: 0 0 10px rgba(152,255,188,.7); }
+.scrub-head b { color: #86858b; font-weight: 400; }
+.drive-card { display: grid; grid-template-columns: 54px 1fr 28px; align-items: center; gap: 16px; margin-top: 22px; padding: 18px; background: #303035; border: 1px solid #4c4c52; }
+.drive-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 9px; background: var(--paper); color: #171719; font-size: 24px; }
+.drive-card small, .drive-card span { display: block; font: 400 8px/1.5 var(--font-mono); letter-spacing: .08em; color: #929198; }.drive-card strong { display: block; margin: 4px 0; font-size: 17px; }
+.drive-card > i { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: #98ffbc; color: #111; font-style: normal; }
+.scrub-progress { margin-top: 25px; }.scrub-progress > div:first-child { display: flex; justify-content: space-between; font: 500 10px var(--font-mono); }
+.scrub-track { height: 7px; background: #494950; margin: 12px 0 9px; }.scrub-track i { display: block; width: 72%; height: 100%; background: var(--lilac); }
+.scrub-progress small { font: 400 8px var(--font-mono); letter-spacing: .1em; color: #8f8e95; }
+.scrub-status { display: flex; justify-content: center; gap: 20px; margin-top: 25px; font: 500 8px var(--font-mono); letter-spacing: .13em; }.scrub-status b { color: #98ffbc; }
 
 .salon-visual { background: #d9ff71; color: var(--ink); padding: 28px; }
 .salon-topline { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(13,13,13,.35); padding-bottom: 18px; font: 600 10px var(--font-mono); letter-spacing: .1em; }
@@ -157,7 +165,7 @@ h1 em, h2 em { font-family: var(--font-serif); font-weight: 400; text-transform:
   .hero-kicker span:last-child { display: none; }.hero-grid { min-height: 610px; }.hero h1 { letter-spacing: -.08em; }
   .work, .services, .approach { padding-block: 95px; }.section-heading, .services-intro { margin-bottom: 60px; }.product { padding: 45px 0; }.product-visual { min-height: 300px; }
   .pup-visual { padding: 28px 22px; }.pup-face { width: 58px; height: 58px; }.pup-card strong { font-size: 24px; }
-  .freebee-visual { padding: 25px 18px; }.crt { height: 245px; }.score-visual { padding: 20px 14px; }
+  .scrubbit-visual { padding: 22px 14px; }.scrub-window { padding: 18px 14px; min-height: 255px; }.drive-card { grid-template-columns: 44px 1fr 26px; gap: 10px; padding: 14px 10px; }.drive-icon { width: 42px; height: 42px; }.score-visual { padding: 20px 14px; }
   .salon-visual { padding: 20px 16px; }.salon-topline b { display: none; }.salon-dashboard { grid-template-columns: 1fr; }.salon-summary { display: none; }.salon-calendar { box-shadow: 5px 6px 0 rgba(13,13,13,.9); }
   .service-grid { grid-template-columns: 1fr; }.service-grid article, .service-grid article:nth-child(even) { padding: 28px 0 38px; border-right: 0; }.service-grid h3 { margin-top: 55px; }
   .quote { margin-top: 85px; }.contact { padding-top: 100px; }.contact h2 { margin-bottom: 55px; }
