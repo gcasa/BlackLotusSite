@@ -216,7 +216,7 @@ export default function Home() {
             <p>Independent architecture reviews, team guidance, vendor evaluation, and hands-on problem solving for consequential decisions.</p>
           </article>
         </div>
-        <a className="services-cta" href="mailto:hello@blacklotus.inc?subject=Consulting%20inquiry">
+        <a className="services-cta" href="mailto:greg.casamento@gmail.com?subject=Consulting%20inquiry">
           <span>Tell us what you’re working through</span><Arrow />
         </a>
       </section>
@@ -242,12 +242,12 @@ export default function Home() {
       <section className="contact shell" id="contact">
         <span className="label">Building something—or solving something?</span>
         <h2>Let’s make it<br /><em>bloom.</em></h2>
-        <a className="contact-button" href="mailto:hello@blacklotus.inc">
+        <a className="contact-button" href="mailto:greg.casamento@gmail.com">
           <span>Start a conversation</span><Arrow />
         </a>
         <div className="contact-footer">
           <div><strong>Black Lotus Incorporated</strong><span>Independent software studio</span></div>
-          <a href="mailto:hello@blacklotus.inc">hello@blacklotus.inc</a>
+          <a href="mailto:greg.casamento@gmail.com">greg.casamento@gmail.com</a>
           <span>© 2026 · Built with intention</span>
         </div>
       </section>
