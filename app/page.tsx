@@ -7,6 +7,8 @@ const products = [
       "A structured BASIC for macOS and GNUstep that pairs the delight of classic computing with modern blocks, functions, graphics, sound, and native app compilation.",
     tags: ["Language design", "Native macOS", "GNUstep"],
     visual: "terminal",
+    href: "/downloads/MacBasic.zip",
+    linkLabel: "Download MacBasic",
   },
   {
     number: "02",
@@ -25,6 +27,8 @@ const products = [
       "A lightweight native score viewer and editor that opens MIDI, MusicXML, and MusicKit scorefiles, then turns them into clear, playable notation.",
     tags: ["Music technology", "AppKit", "Cross-platform"],
     visual: "score",
+    href: "/downloads/ScoreMaker.zip",
+    linkLabel: "Download ScoreMaker",
   },
   {
     number: "04",
@@ -34,6 +38,8 @@ const products = [
       "A connected operations platform for modern salons, bringing appointments, customers, stylists, services, inventory, checkout, and payments into one calm workflow across web and iOS.",
     tags: ["Operations platform", "Ruby on Rails", "Native iOS"],
     visual: "salon",
+    href: "https://salonsync.duckdns.org",
+    linkLabel: "Launch SalonSync",
   },
   {
     number: "05",
@@ -43,6 +49,8 @@ const products = [
       "A focused macOS privacy utility for overwriting selected files, folders, and removable media—with clear device details and live progress through every pass.",
     tags: ["Privacy utility", "Native macOS", "Disk management"],
     visual: "scrubbit",
+    href: "/downloads/ScrubBit.zip",
+    linkLabel: "Download ScrubBit",
   },
 ];
 
@@ -181,6 +189,11 @@ export default function Home() {
                 <h3>{product.name}</h3>
                 <p className="description">{product.description}</p>
                 <div className="tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                {product.href && (
+                  <a className="product-link" href={product.href}>
+                    {product.linkLabel} <Arrow />
+                  </a>
+                )}
               </div>
               <ProductVisual type={product.visual} />
             </article>
