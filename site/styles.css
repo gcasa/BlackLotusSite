@@ -87,6 +87,17 @@ h1 em, h2 em { font-family: var(--font-serif); font-weight: 400; text-transform:
 .product-link:focus-visible { outline: 2px solid var(--lilac); outline-offset: 5px; }
 .product-visual { min-height: 390px; position: relative; overflow: hidden; border-radius: 2px; }
 
+.product h3.ledger-title { font-size: clamp(30px, 4vw, 62px); overflow-wrap: anywhere; }
+.ledger-visual { display: grid; place-items: center; padding: 30px 20px; background: #dcd5ee; color: #19151f; }
+.ledger-window { width: min(100%, 450px); background: #f9f7fc; border: 1px solid #c5b9da; border-radius: 10px; padding: 24px; box-shadow: 10px 12px 0 #b6a6ce; }
+.ledger-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font: 500 10px var(--font-mono); letter-spacing: .08em; }
+.ledger-timer { display: grid; gap: 12px; padding: 32px 0; }
+.ledger-timer small, .ledger-timer > span { font: 12px var(--font-mono); color: #665673; }
+.ledger-timer strong { font: 500 clamp(32px, 4vw, 48px) var(--font-mono); }
+.ledger-row { display: flex; justify-content: space-between; gap: 12px; padding: 16px 0; border-top: 1px solid #ded5e8; font-size: 13px; }
+.ledger-paid { color: #35694a; }
+.ledger-caption { padding-top: 16px; font-size: 12px; color: #665673; }
+
 .terminal-visual { background: #121214; color: #f5f0e8; padding: 24px 28px; box-shadow: inset 0 0 80px rgba(139, 103, 255, .12); }
 .window-bar { display: flex; gap: 8px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid #333; }
 .window-bar i { width: 9px; height: 9px; border-radius: 50%; background: #6d6d72; }

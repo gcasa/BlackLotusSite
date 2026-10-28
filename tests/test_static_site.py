@@ -35,7 +35,7 @@ class StaticSiteTests(unittest.TestCase):
         self.assertNotIn("script", self.page.tags)
         self.assertNotIn("_next", self.html)
         self.assertNotIn(".js", self.html)
-        for product in ("MacBasic", "PupPad", "ScoreMaker", "SalonSync", "ScrubBit"):
+        for product in ("MacBasic", "PupPad", "ScoreComposer", "SalonSync", "ScrubBit", "ClockAndLedger"):
             self.assertIn(product, self.html)
         self.assertTrue((SITE / ".nojekyll").exists())
 
@@ -58,7 +58,7 @@ class StaticSiteTests(unittest.TestCase):
         self.assertIn("support", self.page.ids)
         self.assertIn("#support", self.page.urls)
         self.assertIn("mailto:greg.casamento@gmail.com", self.page.urls)
-        for product in ("MacBasic", "PupPad", "ScoreMaker", "SalonSync", "ScrubBit"):
+        for product in ("MacBasic", "PupPad", "ScoreComposer", "SalonSync", "ScrubBit", "ClockAndLedger"):
             self.assertIn(
                 f"mailto:greg.casamento@gmail.com?subject={product}%20support",
                 self.page.urls,

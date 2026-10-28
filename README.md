@@ -42,7 +42,7 @@ contact emails go to `greg.casamento@gmail.com`.
 
 ## Product downloads
 
-The page links to `downloads/MacBasic.zip`, `downloads/ScoreMaker.zip`, and
+The page links to `downloads/MacBasic.zip`, `downloads/ScoreComposer.zip`, and
 `downloads/ScrubBit.zip`. These archives are not included in this repository.
 Place the release files in `site/downloads/` to enable those downloads.
 SalonSync links to its separately hosted application.
