@@ -49,3 +49,10 @@ SalonSync links to its separately hosted application.
 
 Social-preview image URLs in `site/index.html` use the repository's GitHub Pages
 URL. Update those absolute URLs if you move the website to a custom domain.
+
+## Privacy policy
+
+The website privacy policy is in `site/privacy.html`, linked from the footer.
+Its GitHub Pages URL is `https://gcasa.github.io/BlackLotusSite/privacy.html`.
+The policy covers this website and direct correspondence; product-specific data
+practices should be documented with each app or separately hosted service.
