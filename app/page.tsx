@@ -1,3 +1,5 @@
+import { assetPath } from "./asset-path";
+
 const products = [
   {
     number: "01",
@@ -145,13 +147,14 @@ export default function Home() {
     <main>
       <nav className="nav shell" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label="Black Lotus home">
-          <img src="/black-lotus-logo.png" alt="" />
+          <img src={assetPath("/black-lotus-logo.png")} alt="" />
           <span>BLACK LOTUS<small>INCORPORATED</small></span>
         </a>
         <div className="nav-links">
           <a href="#work">Work</a>
           <a href="#services">Consulting</a>
           <a href="#approach">Approach</a>
+          <a href="#support">Support</a>
           <a href="#contact" className="nav-cta">Start a project <Arrow /></a>
         </div>
       </nav>
@@ -165,7 +168,7 @@ export default function Home() {
             <a href="#work" className="text-link">Explore our work <Arrow /></a>
           </div>
           <div className="hero-mark" aria-hidden="true">
-            <img src="/black-lotus-logo.png" alt="" />
+            <img src={assetPath("/black-lotus-logo.png")} alt="" />
           </div>
         </div>
         <div className="hero-marquee" aria-label="Services">
@@ -190,7 +193,7 @@ export default function Home() {
                 <p className="description">{product.description}</p>
                 <div className="tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 {product.href && (
-                  <a className="product-link" href={product.href}>
+                  <a className="product-link" href={product.href.startsWith("/") ? assetPath(product.href) : product.href}>
                     {product.linkLabel} <Arrow />
                   </a>
                 )}
@@ -247,8 +250,22 @@ export default function Home() {
           </div>
           <div className="quote">
             <p>“The best technology doesn’t ask for attention. It earns affection.”</p>
-            <img src="/black-lotus-logo.png" alt="Black Lotus emblem" />
+            <img src={assetPath("/black-lotus-logo.png")} alt="Black Lotus emblem" />
           </div>
+        </div>
+      </section>
+
+      <section className="support shell" id="support" aria-labelledby="support-heading">
+        <span className="label">Product support</span>
+        <h2 id="support-heading">How can we help?</h2>
+        <p>For help with any Black Lotus app, bug reports, or questions, contact Greg Casamento at <a href="mailto:greg.casamento@gmail.com">greg.casamento@gmail.com</a>.</p>
+        <p>Please include the app name and version, your device and operating system version, and a description of the issue. Never send passwords or payment details.</p>
+        <div className="support-links" aria-label="Support by app">
+          {products.map((product) => (
+            <a key={product.name} href={`mailto:greg.casamento@gmail.com?subject=${encodeURIComponent(`${product.name} support`)}`}>
+              {product.name} support <Arrow />
+            </a>
+          ))}
         </div>
       </section>
 
@@ -260,7 +277,10 @@ export default function Home() {
         </a>
         <div className="contact-footer">
           <div><strong>Black Lotus Incorporated</strong><span>Independent software studio</span></div>
-          <a href="mailto:greg.casamento@gmail.com">greg.casamento@gmail.com</a>
+          <div className="footer-links">
+            <a href="#support">App support</a>
+            <a href="mailto:greg.casamento@gmail.com">Contact: greg.casamento@gmail.com</a>
+          </div>
           <span>© 2026 · Built with intention</span>
         </div>
       </section>

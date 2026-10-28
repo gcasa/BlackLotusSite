@@ -147,6 +147,15 @@ h1 em, h2 em { font-family: var(--font-serif); font-weight: 400; text-transform:
 .quote p { font: italic 400 clamp(38px, 5.4vw, 78px)/1.05 var(--font-serif); max-width: 1000px; margin: 0; }
 .quote img { filter: invert(1); opacity: .8; }
 
+.support { padding-block: 90px; border-bottom: 1px solid var(--line); scroll-margin-top: 24px; }
+.support h2 { margin: 24px 0; font-size: clamp(36px, 5vw, 64px); letter-spacing: -.04em; }
+.support p { max-width: 720px; color: #b9b5ad; font-size: 16px; line-height: 1.7; }
+.support p a { color: var(--lilac); text-decoration: underline; overflow-wrap: anywhere; }
+.support-links { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 32px; }
+.support-links a { padding-block: 10px; border-bottom: 1px solid var(--lilac); }
+.support-links a:hover, .footer-links a:hover { color: var(--lilac); }
+.footer-links { display: flex; flex-direction: column; gap: 12px; overflow-wrap: anywhere; }
+
 .contact { padding: 140px 0 40px; }
 .contact h2 { margin: 40px 0 75px; font-size: clamp(70px, 11vw, 168px); }
 .contact-button { border-top: 1px solid rgba(241, 238, 230, .7); border-bottom: 1px solid rgba(241, 238, 230, .7); padding: 26px 4px; display: flex; justify-content: space-between; align-items: center; font-size: 24px; font-weight: 700; transition: padding .25s, color .25s; }

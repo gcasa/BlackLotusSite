@@ -1,98 +1,59 @@
-# vinext-starter
+# Black Lotus Incorporated
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+A static studio and consulting website built with React and Next.js. The production
+build exports HTML, CSS, JavaScript, images, and fonts into `out/`. Hosting requires
+no Node.js process, Cloudflare worker, database, or application server.
 
-## Prerequisites
+## Build locally
 
-- Node.js `>=22.13.0`
+Use Node.js 22.13 or newer:
 
-## Quick Start
-
-```bash
-npm install
-npm run dev
+```sh
+npm ci
 npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+Upload the contents of `out/` to any static host. For a local HTTP preview, run
+`python3 -m http.server 8080 --directory out` and open `http://localhost:8080`.
+The site is intended for HTTP hosting, rather than opening HTML via `file://`.
+Google Fonts are downloaded at build time and served from the exported site.
 
-## Included Shape
+For a site hosted under a subdirectory, set its path at build time:
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```sh
+NEXT_PUBLIC_BASE_PATH=/BlackLotusSite npm run build
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+Use an empty base path (the default) for a domain-root or custom-domain deployment.
+Do not include a trailing slash in `NEXT_PUBLIC_BASE_PATH`.
+For another hosting domain, set `NEXT_PUBLIC_SITE_URL` to its origin (for example,
+`https://example.com`) so social-preview images use the correct absolute URLs.
+It defaults to `https://gcasa.github.io`; the Pages workflow sets it automatically.
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+## GitHub Pages
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+1. In the repository's **Settings → Pages**, select **GitHub Actions** as the source.
+2. Push to `main`, or manually run **Deploy static site to GitHub Pages** in Actions.
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+The workflow obtains the base path from GitHub Pages, builds and tests the static
+export, and deploys `out/`. It supports both repository Pages paths and custom
+domains. If the publishing branch differs from `main`, update the workflow trigger
+in `.github/workflows/pages.yml`.
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+## Product downloads
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+The page links to `downloads/MacBasic.zip`, `downloads/ScoreMaker.zip`, and
+`downloads/ScrubBit.zip`. These archives are not included in this repository.
+Place the release files in `public/downloads/` before building to make those links
+work. SalonSync remains a link to its separately hosted application.
 
-## Useful Commands
+## Development and checks
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+- `npm run dev`: existing vinext development preview
+- `npm run build`: static export to `out/`
+- `npm test`: build and verify exported content and asset paths
+- `NEXT_PUBLIC_BASE_PATH=/BlackLotusSite npm test`: verify a project Pages build
+- `npm run lint`: lint source files
+- `npm run build:server`: original Cloudflare/vinext build, if needed
 
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+Edit content in `app/page.tsx` and styles in `app/globals.css`.
