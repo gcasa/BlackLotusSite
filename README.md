@@ -54,5 +54,6 @@ URL. Update those absolute URLs if you move the website to a custom domain.
 
 The website privacy policy is in `site/privacy.html`, linked from the footer.
 Its GitHub Pages URL is `https://gcasa.github.io/BlackLotusSite/privacy.html`.
-The policy covers this website and direct correspondence; product-specific data
-practices should be documented with each app or separately hosted service.
+The policy covers all apps created by Black Lotus Incorporated, including current
+and future downloadable apps and hosted services, this website, and direct
+correspondence. Product-specific privacy details supplement this shared policy.
